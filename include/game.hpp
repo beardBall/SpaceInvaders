@@ -17,6 +17,7 @@ class Game{
     private:
         Spaceship spaceship;
         Dash dash;
+        void deleteInactiveLasers();
 
 
 

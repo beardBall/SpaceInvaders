@@ -7,6 +7,7 @@ Spaceship::Spaceship()
         image = LoadTexture(ASSETS_PATH"Graphics/spaceship.png");
         position.x  = GetScreenWidth() / 2 - image.width/2;
         position.y  = GetScreenHeight() - image.height;
+        lastFireTime = 0;
         // laser = Laser({position.x,position.y-20},7);
         // position = (Vector2){
         //      GetScreenWidth() / 2,
@@ -46,7 +47,10 @@ void Spaceship::MoveRight()
 void Spaceship::FireLaser()
 {
     
-    lasers.push_back(Laser(
-        {position.x, position.y}
-        ,-6));
+    if(GetTime() - lastFireTime >= 0.35){
+        lasers.push_back(Laser(
+            {position.x, position.y}
+            ,-6));
+            lastFireTime = GetTime();
+        }
 }

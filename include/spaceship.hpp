@@ -31,6 +31,7 @@ class Spaceship {
     private:
     Texture2D image;
     Vector2 position;
+    double lastFireTime;
 
 
 
