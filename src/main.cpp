@@ -32,7 +32,6 @@ int main(){
     Laser laser = Laser({100,100},7);
     
     // SetTargetFPS(60);
-
     while(!WindowShouldClose()){
         game.update();
         game.handleInput();
