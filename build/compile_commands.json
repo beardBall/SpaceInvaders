@@ -1,0 +1,32 @@
+[
+{
+  "directory": "/Users/waqara/Desktop/spaceInvaders/build",
+  "command": "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ -DASSETS_PATH=\\\"/Users/waqara/Desktop/spaceInvaders/assets/\\\" -DASSETS_PATH_AUDIO=\\\"/Users/waqara/Desktop/spaceInvaders/assets/audio/\\\" -DGRAVITY=9.8f -I/Users/waqara/Desktop/spaceInvaders/include -F/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX11.3.sdk/System/Library/Frameworks -g -std=gnu++2a -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX11.3.sdk -o CMakeFiles/SpaceInvader.dir/src/game.cpp.o -c /Users/waqara/Desktop/spaceInvaders/src/game.cpp",
+  "file": "/Users/waqara/Desktop/spaceInvaders/src/game.cpp",
+  "output": "CMakeFiles/SpaceInvader.dir/src/game.cpp.o"
+},
+{
+  "directory": "/Users/waqara/Desktop/spaceInvaders/build",
+  "command": "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ -DASSETS_PATH=\\\"/Users/waqara/Desktop/spaceInvaders/assets/\\\" -DASSETS_PATH_AUDIO=\\\"/Users/waqara/Desktop/spaceInvaders/assets/audio/\\\" -DGRAVITY=9.8f -I/Users/waqara/Desktop/spaceInvaders/include -F/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX11.3.sdk/System/Library/Frameworks -g -std=gnu++2a -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX11.3.sdk -o CMakeFiles/SpaceInvader.dir/src/laser.cpp.o -c /Users/waqara/Desktop/spaceInvaders/src/laser.cpp",
+  "file": "/Users/waqara/Desktop/spaceInvaders/src/laser.cpp",
+  "output": "CMakeFiles/SpaceInvader.dir/src/laser.cpp.o"
+},
+{
+  "directory": "/Users/waqara/Desktop/spaceInvaders/build",
+  "command": "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ -DASSETS_PATH=\\\"/Users/waqara/Desktop/spaceInvaders/assets/\\\" -DASSETS_PATH_AUDIO=\\\"/Users/waqara/Desktop/spaceInvaders/assets/audio/\\\" -DGRAVITY=9.8f -I/Users/waqara/Desktop/spaceInvaders/include -F/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX11.3.sdk/System/Library/Frameworks -g -std=gnu++2a -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX11.3.sdk -o CMakeFiles/SpaceInvader.dir/src/main.cpp.o -c /Users/waqara/Desktop/spaceInvaders/src/main.cpp",
+  "file": "/Users/waqara/Desktop/spaceInvaders/src/main.cpp",
+  "output": "CMakeFiles/SpaceInvader.dir/src/main.cpp.o"
+},
+{
+  "directory": "/Users/waqara/Desktop/spaceInvaders/build",
+  "command": "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ -DASSETS_PATH=\\\"/Users/waqara/Desktop/spaceInvaders/assets/\\\" -DASSETS_PATH_AUDIO=\\\"/Users/waqara/Desktop/spaceInvaders/assets/audio/\\\" -DGRAVITY=9.8f -I/Users/waqara/Desktop/spaceInvaders/include -F/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX11.3.sdk/System/Library/Frameworks -g -std=gnu++2a -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX11.3.sdk -o CMakeFiles/SpaceInvader.dir/src/player.cpp.o -c /Users/waqara/Desktop/spaceInvaders/src/player.cpp",
+  "file": "/Users/waqara/Desktop/spaceInvaders/src/player.cpp",
+  "output": "CMakeFiles/SpaceInvader.dir/src/player.cpp.o"
+},
+{
+  "directory": "/Users/waqara/Desktop/spaceInvaders/build",
+  "command": "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ -DASSETS_PATH=\\\"/Users/waqara/Desktop/spaceInvaders/assets/\\\" -DASSETS_PATH_AUDIO=\\\"/Users/waqara/Desktop/spaceInvaders/assets/audio/\\\" -DGRAVITY=9.8f -I/Users/waqara/Desktop/spaceInvaders/include -F/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX11.3.sdk/System/Library/Frameworks -g -std=gnu++2a -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX11.3.sdk -o CMakeFiles/SpaceInvader.dir/src/spaceship.cpp.o -c /Users/waqara/Desktop/spaceInvaders/src/spaceship.cpp",
+  "file": "/Users/waqara/Desktop/spaceInvaders/src/spaceship.cpp",
+  "output": "CMakeFiles/SpaceInvader.dir/src/spaceship.cpp.o"
+}
+]

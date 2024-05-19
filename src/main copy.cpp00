@@ -1,0 +1,104 @@
+#include <iostream>
+#include "z.hpp"
+#include "raylib.h"
+#include "player.h"
+#include "tinyxml2.h"
+
+
+#define FOVY_PERSPECTIVE    45.0f
+#define WIDTH_ORTHOGRAPHIC  10.0f
+
+
+void doXML(){
+
+
+}
+
+Texture2D atlas;
+Vector2 gridPosition;
+
+
+int main(){
+using namespace tinyxml2;
+//ASSETS_PATH"sheet.xml"
+
+std::cout << ASSETS_PATH"64_1.png" << std::endl;
+
+gridPosition = {10,10};
+// XMLDocument doc;
+// doc.LoadFile(ASSETS_PATH"sheet.xml");
+// std::cout << doc.FirstChild << std::endl;
+
+    std::cout << __cplusplus << std::endl;
+    std::cout << "hello" << std::endl;
+    std::cout << giveme_five() << std::endl;
+    Player p;
+     p = Player();
+    
+
+
+    InitWindow(900,900,"NHEllo small pngXML");
+    SetWindowState(FLAG_VSYNC_HINT);
+    atlas = LoadTexture(ASSETS_PATH"tile.png");
+
+
+    // Define the camera to look into our 3d world
+    // camera.position = (Vector3){ 16.0f, 16.0f, 16.0f }; // Camera position
+    // camera.target = (Vector3){ 0.0f, 0.0f, 0.0f };      // Camera looking at point
+    // camera.up = (Vector3){ 0.0f, 1.0f, 0.0f };          // Camera up vector (rotation towards target)
+    // camera.fovy = 45.0f;                                // Camera field-of-view Y
+    // camera.projection = CAMERA_PERSPECTIVE;    
+
+
+        Camera camera = { { 0.0f, 10.0f, 10.0f }, { 0.0f, 0.0f, 0.0f }, { 0.0f, 1.0f, 0.0f }, FOVY_PERSPECTIVE, CAMERA_PERSPECTIVE };
+float angle = 0.0f;
+float scale = 0.5f;
+Rectangle source  = (Rectangle) {0,0,60,60};
+Rectangle dest  = (Rectangle) {440,440,60,60};
+
+
+    while(!WindowShouldClose()){
+
+        p.update();
+        // UpdateCamera(&camera, CAMERA_ORBITAL);
+        angle +=1.39f;
+        BeginDrawing();
+                    ClearBackground(WHITE);
+                    DrawTexture(atlas,20,20,GREEN);
+                    
+                    DrawTextureV(atlas, (Vector2){20,275},BLUE);
+
+                    DrawTextureRec(atlas,source,(Vector2){0,100},PURPLE);
+                    
+                    DrawTextureEx(atlas, (Vector2){10,120},angle,scale,GRAY);
+                    
+
+                    DrawTexturePro(atlas, source, dest, (Vector2){30,30},angle, BLACK);
+
+
+            BeginMode3D(camera);
+            DrawCubeV((Vector3){-4.0f, 0.0f, 2.0f}, (Vector3){1.0f, 1.0f, 1.0f}, YELLOW);
+            DrawCylinder((Vector3){4.0f, 0.0f, -2.0f}, 1.0f, 0.70f, 5.0f, 4, PINK);
+            DrawCylinder((Vector3){4.0f, 0.0f, -2.0f}, 1.0f, 0.70f, 5.0f, 4, PINK);
+            
+
+
+            
+            
+             p.draw();
+            
+            // DrawGrid(10, 4.0f);        // Draw a grid
+            EndMode3D();
+
+            DrawText("he",100,100,14,BLACK);
+            p.draw();
+
+        EndDrawing();
+
+
+    }
+
+
+
+    return 0;
+}
