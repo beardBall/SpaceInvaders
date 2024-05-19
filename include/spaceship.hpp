@@ -1,9 +1,9 @@
 #pragma once
 #include "raylib.h"
 #include "spaceship.hpp"
-
-
-
+#include "laser.hpp"
+#include <iostream>
+#include <vector>
 
 class Spaceship {
 
@@ -16,6 +16,9 @@ class Spaceship {
         void MoveLeft();
         void MoveRight();
         void FireLazer();
+
+        std::vector<Laser> lasers;
+        // Laser laser;
 
 
 

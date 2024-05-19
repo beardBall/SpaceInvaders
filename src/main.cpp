@@ -36,8 +36,6 @@ int main(){
     while(!WindowShouldClose()){
         game.update();
         game.handleInput();
-        laser.update();
-
 
         BeginDrawing();
             ClearBackground(grey);

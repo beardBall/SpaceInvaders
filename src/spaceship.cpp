@@ -1,12 +1,13 @@
 #include "spaceship.hpp"
 #include "raylib.h"
 
+
 Spaceship::Spaceship()
 {
         image = LoadTexture(ASSETS_PATH"Graphics/spaceship.png");
         position.x  = GetScreenWidth() / 2 - image.width/2;
         position.y  = GetScreenHeight() - image.height;
-
+        // laser = Laser({position.x,position.y-20},7);
         // position = (Vector2){
         //      GetScreenWidth() / 2,
         // 100.0f};
@@ -20,10 +21,12 @@ Spaceship::~Spaceship()
 void Spaceship::draw()
 {
     DrawTextureV(image,position,WHITE);
+    // laser.draw();
 }
 
 void Spaceship::update()
 {
+        // laser.update();
 }
 
 void Spaceship::MoveLeft()
@@ -42,4 +45,8 @@ void Spaceship::MoveRight()
 
 void Spaceship::FireLazer()
 {
+    
+    lasers.push_back(Laser(
+        {position.x, position.y}
+        ,-6));
 }
