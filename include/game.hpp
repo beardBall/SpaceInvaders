@@ -1,4 +1,5 @@
 #include "spaceship.hpp"
+#include "dash.hpp"
 
 
 
@@ -14,7 +15,8 @@ class Game{
          Music music;
     
     private:
-        Spaceship spacehip;
+        Spaceship spaceship;
+        Dash dash;
 
 
 

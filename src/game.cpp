@@ -12,19 +12,32 @@ Game::~Game()
 
 void Game::draw()
 {
-    spacehip.draw();
+    spaceship.draw();
+    
+    for(auto& laser: spaceship.lasers)
+    laser.draw();
+    dash.draw();
+
 }
 
 void Game::update()
 {
+        for(auto& laser: spaceship.lasers)
+    laser.update();
+    dash.lasterCount = spaceship.lasers.size();
 }
 
 void Game::handleInput()
 {
     if(IsKeyDown(KEY_LEFT))
-        spacehip.MoveLeft();
+        spaceship.MoveLeft();
 
     if(IsKeyDown(KEY_RIGHT))
-        spacehip.MoveRight();
+        spaceship.MoveRight();
 
+    if(IsKeyDown(KEY_SPACE)){
+
+        spaceship.FireLaser();
+    }
 }
+

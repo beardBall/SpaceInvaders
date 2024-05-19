@@ -13,34 +13,35 @@ void init(){
     std::cout << __cplusplus << std::endl;
     std::cout << "hello" << std::endl;
     std::cout << giveme_five() << std::endl;
-
 }
 
-Texture2D atlas;
+// Texture2D atlas;
 Vector2 gridPosition;
 
 
 int main(){
-
-
     init();
 
-    InitWindow(WINDOWWIDTH,WINDOWHEIGHT,"NHEllo small pngXML");
+    InitWindow(WINDOWWIDTH,WINDOWHEIGHT,"Space Invaders!!!");
     SetWindowState(FLAG_VSYNC_HINT);
     SetWindowPosition(10,10);
     Game game;
-    Laser laser = Laser({100,100},7);
-    
+    double vm, rss;
+   
+
     // SetTargetFPS(60);
     while(!WindowShouldClose()){
         game.update();
         game.handleInput();
+        process_mem_usage(vm, rss);
 
         BeginDrawing();
             ClearBackground(grey);
             game.draw();
-            laser.draw();
+            DrawText(TextFormat("VM: %d, rss: %d", vm, rss),10,20,14,BLUE);
         EndDrawing();
+        
+
     }
 
     return 0;

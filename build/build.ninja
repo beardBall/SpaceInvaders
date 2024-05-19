@@ -49,6 +49,14 @@ cmake_ninja_workdir = /Users/waqara/Desktop/spaceInvaders/build/
 
 build cmake_object_order_depends_target_SpaceInvader: phony || CMakeFiles/SpaceInvader.dir
 
+build CMakeFiles/SpaceInvader.dir/src/dash.cpp.o: CXX_COMPILER__SpaceInvader_unscanned_Debug /Users/waqara/Desktop/spaceInvaders/src/dash.cpp || cmake_object_order_depends_target_SpaceInvader
+  DEFINES = -DASSETS_PATH=\"/Users/waqara/Desktop/spaceInvaders/assets/\" -DASSETS_PATH_AUDIO=\"/Users/waqara/Desktop/spaceInvaders/assets/audio/\" -DGRAVITY=9.8f
+  DEP_FILE = CMakeFiles/SpaceInvader.dir/src/dash.cpp.o.d
+  FLAGS = -g -std=gnu++2a -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX11.3.sdk
+  INCLUDES = -I/Users/waqara/Desktop/spaceInvaders/include -F/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX11.3.sdk/System/Library/Frameworks
+  OBJECT_DIR = CMakeFiles/SpaceInvader.dir
+  OBJECT_FILE_DIR = CMakeFiles/SpaceInvader.dir/src
+
 build CMakeFiles/SpaceInvader.dir/src/game.cpp.o: CXX_COMPILER__SpaceInvader_unscanned_Debug /Users/waqara/Desktop/spaceInvaders/src/game.cpp || cmake_object_order_depends_target_SpaceInvader
   DEFINES = -DASSETS_PATH=\"/Users/waqara/Desktop/spaceInvaders/assets/\" -DASSETS_PATH_AUDIO=\"/Users/waqara/Desktop/spaceInvaders/assets/audio/\" -DGRAVITY=9.8f
   DEP_FILE = CMakeFiles/SpaceInvader.dir/src/game.cpp.o.d
@@ -97,7 +105,7 @@ build CMakeFiles/SpaceInvader.dir/src/spaceship.cpp.o: CXX_COMPILER__SpaceInvade
 #############################################
 # Link the executable SpaceInvader
 
-build SpaceInvader: CXX_EXECUTABLE_LINKER__SpaceInvader_Debug CMakeFiles/SpaceInvader.dir/src/game.cpp.o CMakeFiles/SpaceInvader.dir/src/laser.cpp.o CMakeFiles/SpaceInvader.dir/src/main.cpp.o CMakeFiles/SpaceInvader.dir/src/player.cpp.o CMakeFiles/SpaceInvader.dir/src/spaceship.cpp.o | /Users/waqara/Desktop/spaceInvaders/lib/libraylib.a /Users/waqara/Desktop/spaceInvaders/lib/libtinyxml2.a
+build SpaceInvader: CXX_EXECUTABLE_LINKER__SpaceInvader_Debug CMakeFiles/SpaceInvader.dir/src/dash.cpp.o CMakeFiles/SpaceInvader.dir/src/game.cpp.o CMakeFiles/SpaceInvader.dir/src/laser.cpp.o CMakeFiles/SpaceInvader.dir/src/main.cpp.o CMakeFiles/SpaceInvader.dir/src/player.cpp.o CMakeFiles/SpaceInvader.dir/src/spaceship.cpp.o | /Users/waqara/Desktop/spaceInvaders/lib/libraylib.a /Users/waqara/Desktop/spaceInvaders/lib/libtinyxml2.a
   FLAGS = -g -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX11.3.sdk
   LINK_LIBRARIES = /Users/waqara/Desktop/spaceInvaders/lib/libraylib.a  -framework CoreVideo  -framework IOKit  -framework Cocoa  -framework GLUT  -framework OpenGL  /Users/waqara/Desktop/spaceInvaders/lib/libtinyxml2.a
   OBJECT_DIR = CMakeFiles/SpaceInvader.dir

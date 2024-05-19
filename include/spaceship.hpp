@@ -15,7 +15,7 @@ class Spaceship {
         void update();
         void MoveLeft();
         void MoveRight();
-        void FireLazer();
+        void FireLaser();
 
         std::vector<Laser> lasers;
         // Laser laser;

@@ -1,7 +1,12 @@
-Testing project
-Learning CPP
+#**Testing project**
+<br />
+* *Learning CPP* *
 Learning Raylib
-Learning CMake
+>Learning CMake
 
 and other bits.
 
+lists
+* one 
+* two 
+* three
