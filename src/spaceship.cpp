@@ -8,10 +8,6 @@ Spaceship::Spaceship()
         position.x  = GetScreenWidth() / 2 - image.width/2;
         position.y  = GetScreenHeight() - image.height;
         lastFireTime = 0;
-        // laser = Laser({position.x,position.y-20},7);
-        // position = (Vector2){
-        //      GetScreenWidth() / 2,
-        // 100.0f};
         laserSound = LoadSound(ASSETS_PATH"Sounds/laser.ogg");
         SetSoundVolume(laserSound,0.1f);
 }

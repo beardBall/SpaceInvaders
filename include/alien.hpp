@@ -20,11 +20,14 @@ class Alien {
         // Laser laser;
         // Vector2 position;
         int size;
-        int lives;
+        bool active;
         bool canShoot;
         Texture2D getImage();
         std::string name;
         Rectangle getRect();
+        void die();
+        Sound alienDieSound;
+
 
        int getType();
 
@@ -33,6 +36,8 @@ class Alien {
     Texture2D alienImage;
     Vector2 position;
     double lastFireTime;
+    double lastMoveTime;
+    bool lastMoveLeft;
 
 
 

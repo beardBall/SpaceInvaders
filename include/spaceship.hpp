@@ -5,7 +5,6 @@
 #include <vector>
 
 class Spaceship {
-
     public:
          Spaceship();
         ~Spaceship();
@@ -17,15 +16,9 @@ class Spaceship {
         void FireLaser();
 
         std::vector<Laser> lasers;
-        // Laser laser;
         Sound laserSound;
-        
 
-
-
-        // Vector2 position;
         int size;
-
         int lives;
         bool canShoot;
 
@@ -33,8 +26,5 @@ class Spaceship {
     Texture2D image;
     Vector2 position;
     double lastFireTime;
-
-
-
 
 };

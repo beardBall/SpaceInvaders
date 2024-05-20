@@ -23,6 +23,5 @@ class Game{
         Dash dash;
         void deleteInactiveLasers();
 
-
-
+        void deleteInactiveEnemies();
 };

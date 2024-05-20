@@ -47,3 +47,11 @@ std::string gen_random(const int len) {
     
     return tmp_s;
 }
+
+
+
+// bool rectOverlap(Rectangle r1, Rectangle r2){
+
+
+
+// }

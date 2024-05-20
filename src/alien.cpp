@@ -1,19 +1,15 @@
 #include "alien.hpp"
 #include "raylib.h"
 
-// Alien::Alien(){
-
-// }
-
 Alien::Alien(Vector2 position, int type)
 {
     this -> type = type;
     this -> position = position;
+    active = true;
     std::string textureFile = TextFormat("Graphics/Alien_%d.png",type);
     textureFile = ASSETS_PATH + textureFile;
     std::cout << textureFile << std::endl; 
-    // std::cout  << ASSETS_PATH + TextFormat("Graphics/Alien_%d.png",type) << std::endl;
-    // textureFile = "/Users/waqara/Desktop/spaceInvaders/assets/Graphics/Alien_1.png";
+    bool lastMoveLeft = false;
         
         alienImage = LoadTexture(textureFile.c_str());
 
@@ -21,7 +17,7 @@ Alien::Alien(Vector2 position, int type)
         position.y  = GetScreenHeight() - alienImage.height;
         lastFireTime = 0;
         name = "name10mmmn";
-
+        alienDieSound = LoadSound(ASSETS_PATH"Sounds/explosion.ogg");
 }
 
 
@@ -30,36 +26,42 @@ Alien::Alien(Vector2 position, int type)
 Alien::~Alien()
 {
     // UnloadTexture(alienImage);
+    std::cout << "object Alien destructed!";
 }
 
 void Alien::draw()
 {
     DrawTextureV(alienImage,position,WHITE);
     DrawRectangleLines(position.x, position.y,alienImage.width, alienImage.height,RED);
-    // DrawText(name.c_str(), position.x+6, position.y-16, 12, WHITE);
-    // DrawText(std::to_string(type).c_str(), position.x+10, position.y +10, 26, BLUE);
-    // DrawText(std::to_string(type).c_str(), position.x+6, position.y +6, 26, WHITE);
-
-    // laser.draw();
 }
 
 void Alien::update()
 {
-        // laser.update();
+        if ( GetTime() - lastMoveTime >= 0.95 ){
+            
+            if(lastMoveLeft){
+                MoveRight();
+                lastMoveLeft = false;
+            }else{
+                MoveLeft();
+                lastMoveLeft = true;
+            }
+            
+            lastMoveTime = GetTime();            
+
+        }
 }
 
 void Alien::MoveLeft()
 {
-    position.x -=7;
-    if(position.x < 0)
-        position.x = 0;
+  std::cout << "moving left " << std::endl;
+  position.x -= 10;
 }
 
 void Alien::MoveRight()
 {
-    position.x +=7;
-    if(position.x > (GetScreenWidth() - alienImage.width))
-        position.x = GetScreenWidth() - alienImage.width;
+    std::cout << "moving right "<< std::endl;
+    position.x += 10;
 }
 
 // void Alien::FireLaser()
@@ -90,4 +92,11 @@ Rectangle Alien::getRect(){
         (float)alienImage.width, 
         (float)alienImage.height
         };
+}
+
+void Alien::die()
+{
+    active = false;
+    PlaySound(alienDieSound);
+
 }

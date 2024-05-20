@@ -23,6 +23,10 @@ void Laser::update(){
             active = false;
             // std::cout << "Laser inactive";
         }
-    }
-    
+    }   
+}
+
+
+Rectangle Laser::getRect(){
+    return {position.x, position.y, 4,15};
 }
