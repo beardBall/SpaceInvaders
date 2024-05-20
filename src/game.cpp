@@ -14,7 +14,6 @@ Game::Game()
 
     for (int i = 0; i < rows; i++)
     {
-
         for (int j = 0; j < cols; j++)
         {
             std::cout << map[i][j] << ", ";
@@ -43,10 +42,13 @@ void Game::draw()
     }
 
     dash.draw();
+    DrawText(TextFormat("Enemies left: %d", aliens.size()), 400,40,18, YELLOW);
 }
 
 void Game::update()
 {
+
+
     for (auto &laser : spaceship.lasers)
         laser.update();
     dash.lasterCount = spaceship.lasers.size();
@@ -65,6 +67,7 @@ void Game::update()
         }
     }
     deleteInactiveEnemies();
+
 }
 
 void Game::handleInput()

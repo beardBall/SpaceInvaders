@@ -1,4 +1,4 @@
-#**Testing project**
+#**SPACE Invaders in C++ <Raylib>**
 <br />
 * *Learning CPP* *
 Learning Raylib

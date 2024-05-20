@@ -4,6 +4,7 @@
 #include "game.hpp"
 // #include <laser.hpp>
 #include "alien.hpp"
+#include "obstacle.hpp"
 
 
 #define WINDOWWIDTH  750
@@ -29,6 +30,7 @@ int main(){
         InitAudioDevice();
 
     Game game;
+    Obstacle obstacle = Obstacle({100,100});
     // double vm, rss;
     // int type = 1;
     //     std::string textureFile = TextFormat("Graphics/Alien_%d.png",type);
@@ -95,6 +97,7 @@ int map[3][3] ={
             //   DrawTexture(alienImage3, 600,50,WHITE);
 
             game.draw();
+            obstacle.draw();
             // DrawText(TextFormat("VM: %d, rss: %d", vm, rss/1024),510,10,18,BLUE);
         EndDrawing();
         
