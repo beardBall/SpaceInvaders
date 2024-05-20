@@ -12,6 +12,8 @@ Spaceship::Spaceship()
         // position = (Vector2){
         //      GetScreenWidth() / 2,
         // 100.0f};
+        laserSound = LoadSound(ASSETS_PATH"Sounds/laser.ogg");
+        SetSoundVolume(laserSound,0.1f);
 }
 
 Spaceship::~Spaceship()
@@ -49,8 +51,9 @@ void Spaceship::FireLaser()
     
     if(GetTime() - lastFireTime >= 0.35){
         lasers.push_back(Laser(
-            {position.x, position.y}
+            {position.x + image.width/2, position.y+1}
             ,-6));
             lastFireTime = GetTime();
+            PlaySound(laserSound);
         }
 }

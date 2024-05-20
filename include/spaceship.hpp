@@ -18,6 +18,8 @@ class Spaceship {
 
         std::vector<Laser> lasers;
         // Laser laser;
+        Sound laserSound;
+        
 
 
 

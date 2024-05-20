@@ -19,7 +19,7 @@ class Game{
     
     private:
         Spaceship spaceship;
-        Alien alien;
+        // Alien alien;
         Dash dash;
         void deleteInactiveLasers();
 

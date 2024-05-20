@@ -22,6 +22,11 @@ class Alien {
         int size;
         int lives;
         bool canShoot;
+        Texture2D getImage();
+        std::string name;
+        Rectangle getRect();
+
+       int getType();
 
     private:
     int type;
