@@ -1,4 +1,5 @@
 #include "spaceship.hpp"
+#include "alien.hpp"
 #include "dash.hpp"
 
 
@@ -13,9 +14,12 @@ class Game{
         void update();
         void handleInput();
          Music music;
+        std::vector<Alien> aliens;
+
     
     private:
         Spaceship spaceship;
+        Alien alien;
         Dash dash;
         void deleteInactiveLasers();
 

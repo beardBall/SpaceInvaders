@@ -1,14 +1,14 @@
 #pragma once
 #include "raylib.h"
-#include "laser.hpp"
 #include <iostream>
 #include <vector>
 
-class Spaceship {
+class Alien {
 
     public:
-         Spaceship();
-        ~Spaceship();
+         Alien(Vector2 position, int type);
+        Alien();
+        ~Alien();
 
         void draw();
         void update();
@@ -16,19 +16,16 @@ class Spaceship {
         void MoveRight();
         void FireLaser();
 
-        std::vector<Laser> lasers;
+        // std::vector<Laser> lasers;
         // Laser laser;
-
-
-
         // Vector2 position;
         int size;
-
         int lives;
         bool canShoot;
 
     private:
-    Texture2D image;
+    int type;
+    Texture2D alienImage;
     Vector2 position;
     double lastFireTime;
 

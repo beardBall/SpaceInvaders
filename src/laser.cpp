@@ -10,8 +10,6 @@ Laser::Laser(Vector2 position, int speed)
 
 
 
-
-
 void Laser::draw(){
     if(active)
         DrawRectangle(position.x, position.y, 4,15, RED);

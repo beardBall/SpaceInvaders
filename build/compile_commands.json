@@ -1,6 +1,12 @@
 [
 {
   "directory": "/Users/waqara/Desktop/spaceInvaders/build",
+  "command": "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ -DASSETS_PATH=\\\"/Users/waqara/Desktop/spaceInvaders/assets/\\\" -DASSETS_PATH_AUDIO=\\\"/Users/waqara/Desktop/spaceInvaders/assets/audio/\\\" -DGRAVITY=9.8f -I/Users/waqara/Desktop/spaceInvaders/include -F/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX11.3.sdk/System/Library/Frameworks -g -std=gnu++2a -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX11.3.sdk -o CMakeFiles/SpaceInvader.dir/src/alien.cpp.o -c /Users/waqara/Desktop/spaceInvaders/src/alien.cpp",
+  "file": "/Users/waqara/Desktop/spaceInvaders/src/alien.cpp",
+  "output": "CMakeFiles/SpaceInvader.dir/src/alien.cpp.o"
+},
+{
+  "directory": "/Users/waqara/Desktop/spaceInvaders/build",
   "command": "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ -DASSETS_PATH=\\\"/Users/waqara/Desktop/spaceInvaders/assets/\\\" -DASSETS_PATH_AUDIO=\\\"/Users/waqara/Desktop/spaceInvaders/assets/audio/\\\" -DGRAVITY=9.8f -I/Users/waqara/Desktop/spaceInvaders/include -F/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX11.3.sdk/System/Library/Frameworks -g -std=gnu++2a -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX11.3.sdk -o CMakeFiles/SpaceInvader.dir/src/dash.cpp.o -c /Users/waqara/Desktop/spaceInvaders/src/dash.cpp",
   "file": "/Users/waqara/Desktop/spaceInvaders/src/dash.cpp",
   "output": "CMakeFiles/SpaceInvader.dir/src/dash.cpp.o"

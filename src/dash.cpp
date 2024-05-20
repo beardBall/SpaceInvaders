@@ -1,3 +1,4 @@
+#pragma once
 #include "dash.hpp"
 #include <iostream>
 // #include "raylib.h"
