@@ -1,6 +1,8 @@
 #include "spaceship.hpp"
 #include "alien.hpp"
 #include "dash.hpp"
+#include "obstacle.hpp"
+
 
 
 
@@ -21,6 +23,7 @@ class Game{
         Spaceship spaceship;
         // Alien alien;
         Dash dash;
+        std::vector<Obstacle> obstacles;
         void deleteInactiveLasers();
 
         void deleteInactiveEnemies();
