@@ -2,6 +2,7 @@
 #include "raylib.h"
 #include <iostream>
 #include <vector>
+#include "laser.hpp"
 
 class Alien {
 
@@ -22,6 +23,10 @@ class Alien {
         int size;
         bool active;
         bool canShoot;
+
+        std::vector<Laser> lasers;
+        Sound laserSound;
+
         Texture2D getImage();
         std::string name;
         Rectangle getRect();

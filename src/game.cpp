@@ -3,11 +3,12 @@
 
 Game::Game()
 {
+    obstacles = createObstacles();
 
-    int map[3][6] = {
-        {1, 1, 1, 1, 1, 1},
-        {2, 2, 2, 2, 2, 2},
-        {3, 3, 3, 3, 3, 3}};
+    int map[2][4] = {
+        {4, 1, 3, 1},
+        {2, 4, 2, 2}
+        };
 
     int rows = sizeof(map) / sizeof(map[0]);
     int cols = sizeof(map[0]) / sizeof(map[0][0]);
@@ -17,7 +18,8 @@ Game::Game()
         for (int j = 0; j < cols; j++)
         {
             std::cout << map[i][j] << ", ";
-            aliens.push_back(Alien({(float)(100 + j * 100), (float)(100 + i * 80)}, map[i][j]));
+            aliens.push_back(Alien({(float)(100 + j * 100), (float)(100 + i * 60)}, map[i][j]));
+            
         }
 
         std::cout << std::endl;
@@ -41,6 +43,9 @@ void Game::draw()
             alien.draw(); // hello
     }
 
+    for(auto& obstacle:obstacles)
+        obstacle.draw();
+
     dash.draw();
     DrawText(TextFormat("Enemies left: %d", aliens.size()), 400,40,18, YELLOW);
 }
@@ -62,6 +67,8 @@ void Game::update()
             if (CheckCollisionRecs(alien.getRect(), laser.getRect()))
             {
                 alien.die();
+                laser.active = false;
+                score++;
             }
             // if(laser.getRect().x => alien.getRect().x and laser.getRect().x <= alien.getRect().x )
         }
@@ -101,9 +108,7 @@ void Game::deleteInactiveLasers()
     }
 }
 
-void Game::deleteInactiveEnemies()
-{
-
+void Game::deleteInactiveEnemies(){
     for (auto al = aliens.begin(); al != aliens.end();)
     {
         if (!al->active)
@@ -117,4 +122,17 @@ void Game::deleteInactiveEnemies()
     }
 
     // globVars::aliensRemaining = aliens.size();
+}
+
+
+std::vector<Obstacle> Game::createObstacles()
+{
+    int obstacleWidth = Obstacle::grid[0].size() * 3;
+    float gap = (GetScreenWidth() - (4 * obstacleWidth))/5;
+
+    for(int i = 0; i < 4; i++) {
+        float offsetX = (i + 1) * gap + i * obstacleWidth;
+        obstacles.push_back(Obstacle({offsetX, float(GetScreenHeight() - 200)}));
+    }
+    return obstacles;
 }

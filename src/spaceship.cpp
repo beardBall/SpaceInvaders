@@ -9,7 +9,7 @@ Spaceship::Spaceship()
         position.y  = GetScreenHeight() - image.height;
         lastFireTime = 0;
         laserSound = LoadSound(ASSETS_PATH"Sounds/laser.ogg");
-        SetSoundVolume(laserSound,0.1f);
+        SetSoundVolume(laserSound,0.91f);
 }
 
 Spaceship::~Spaceship()

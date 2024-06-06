@@ -1,14 +1,12 @@
 cmake_minimum_required(VERSION 3.28.3)
-project(SpaceInvader CXX)
-set(CMAKE_CXX_STANDARD 23)
-
-
+project(SpaceInvaders CXX)
+set(CMAKE_CXX_STANDARD 20)
 
 
 file(GLOB_RECURSE PROJECT_SOURCES CONFIGURE_DEPENDS "${CMAKE_CURRENT_LIST_DIR}/src/*.cpp")
 set(BIN "${CMAKE_CURRENT_LIST_DIR}/${PROJECT_NAME}")
 add_executable(${PROJECT_NAME})
-# add_executable(${BIN})
+
 
 target_sources(${PROJECT_NAME} PRIVATE ${PROJECT_SOURCES})
 target_link_libraries(${PROJECT_NAME} "${CMAKE_CURRENT_LIST_DIR}/lib/libraylib.a")
@@ -23,14 +21,11 @@ IF(APPLE)
    FIND_LIBRARY(GLUTT GLUT)
    FIND_LIBRARY(OPENGL OpenGL)
 
-
    MARK_AS_ADVANCED (COREVIDEO IOKIT COCOA GLUTT OPENGL)
    SET(EXTRA_LIBS ${COREVIDEO} ${IOKIT} ${COCOA} ${GLUTT} ${OPENGL} "${CMAKE_CURRENT_LIST_DIR}/lib/libtinyxml2.a")
 ENDIF (APPLE)
 target_link_libraries(${PROJECT_NAME} ${EXTRA_LIBS} )
 # target_link_libraries(${PROJECT_NAME} PRIVATE tinyXML)
-
-
 
 
 # Setting ASSETS_PATH
@@ -43,4 +38,4 @@ target_compile_definitions(${PROJECT_NAME} PUBLIC ASSETS_PATH_AUDIO="${CMAKE_CUR
  target_include_directories(${PROJECT_NAME} PRIVATE ${PROJECT_INCLUDE})
 
 
- target_compile_definitions(${PROJECT_NAME} PUBLIC GRAVITY=9.8f)
+ target_compile_definitions(${PROJECT_NAME} PUBLIC GRAVITY=9.81f)
