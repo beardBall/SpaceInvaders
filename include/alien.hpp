@@ -35,11 +35,13 @@ class Alien {
 
 
        int getType();
+           Vector2 position;
+               Texture2D alienImage;
+
+
 
     private:
     int type;
-    Texture2D alienImage;
-    Vector2 position;
     double lastFireTime;
     double lastMoveTime;
     bool lastMoveLeft;

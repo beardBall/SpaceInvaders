@@ -46,17 +46,18 @@ void Alien::draw()
 
 void Alien::update()
 {
+
         if ( GetTime() - lastMoveTime >= 0.95 ){
             
-            if(lastMoveLeft){
-                MoveRight();
-                lastMoveLeft = false;
-                lastMoveTime = GetTime();    
-            }else{
-                MoveLeft();
-                lastMoveLeft = true;
-                lastMoveTime = GetTime();    
-            }
+            // if(lastMoveLeft){
+            //     MoveRight();
+            //     lastMoveLeft = false;
+            //     lastMoveTime = GetTime();    
+            // }else{
+            //     MoveLeft();
+            //     lastMoveLeft = true;
+            //     lastMoveTime = GetTime();    
+            // }
             
         
 

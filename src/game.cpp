@@ -4,6 +4,7 @@
 Game::Game()
 {
     obstacles = createObstacles();
+    alienDirection = 1;
 
     int map[2][4] = {
         {4, 1, 3, 1},
@@ -70,6 +71,8 @@ void Game::update()
                 laser.active = false;
                 score++;
             }
+
+
             // if(laser.getRect().x => alien.getRect().x and laser.getRect().x <= alien.getRect().x )
         }
     }
@@ -124,6 +127,21 @@ void Game::deleteInactiveEnemies(){
     // globVars::aliensRemaining = aliens.size();
 }
 
+void Game::MoveAliens(){
+    for(auto& alien: aliens){
+        if(alien.position.x + alien.alienImage.width > GetScreenWidth() - 25){
+            alienDirection = -1;
+            MoveDownAliens(4);
+        }
+    }
+}
+
+void Game::MoveDownAliens(int distance)
+{
+    for(auto& alien: aliens){
+        alien.position.y += distance;
+    }
+}
 
 std::vector<Obstacle> Game::createObstacles()
 {

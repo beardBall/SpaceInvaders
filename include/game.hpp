@@ -18,6 +18,7 @@ class Game{
          Music music;
         std::vector<Alien> aliens;
         int score;
+        int alienDirection;
 
     
     private:
@@ -28,5 +29,7 @@ class Game{
         void deleteInactiveLasers();
 
         void deleteInactiveEnemies();
+        void MoveDownAliens(int distance);
+        void MoveAliens();
         std::vector<Obstacle> createObstacles();
 };

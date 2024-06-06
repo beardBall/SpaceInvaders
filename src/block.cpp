@@ -19,3 +19,5 @@ Rectangle Block::getRect(){
     return rect; 
 
 }
+
+//TODO collision with lasers
