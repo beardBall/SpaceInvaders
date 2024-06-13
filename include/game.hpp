@@ -31,5 +31,6 @@ class Game{
         void deleteInactiveEnemies();
         void MoveDownAliens(int distance);
         void MoveAliens();
+        void checkCollisions();
         std::vector<Obstacle> createObstacles();
 };

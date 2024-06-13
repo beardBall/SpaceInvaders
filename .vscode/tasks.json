@@ -7,10 +7,23 @@
             "args": [
                 "-fcolor-diagnostics",
                 "-fansi-escape-codes",
+                "-framework",
+                "CoreVideo",
+                "-framework",
+                "IOKit",
+                "-framework",
+                "Cocoa",
+                "-framework",
+                "GLUT",
+                "${workspaceFolder}/lib/libraylib.a",
+                "-I",
+                "${workspaceFolder}/include",
                 "-g",
                 "${file}",
                 "-o",
-                "${fileDirname}/${fileBasenameNoExtension}"
+                "${fileDirname}/${project_name}",
+                "-D",
+                "NAMEE=Waqar",
             ],
             "options": {
                 "cwd": "${fileDirname}"

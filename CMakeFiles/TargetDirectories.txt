@@ -1,3 +1,0 @@
-/Users/waqar/Desktop/spaceInvaders/CMakeFiles/SpaceInvaders.dir
-/Users/waqar/Desktop/spaceInvaders/CMakeFiles/edit_cache.dir
-/Users/waqar/Desktop/spaceInvaders/CMakeFiles/rebuild_cache.dir

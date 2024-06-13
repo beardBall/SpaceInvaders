@@ -1,12 +1,22 @@
-#**SPACE Invaders in C++ <Raylib>**
+# SPACE Invaders 
+## in C++ 
+### using Raylib
+<br />***Head1***
 <br />
+
+
 * *Learning CPP* *
 Learning Raylib
 >Learning CMake
 
 and other bits.
 
-lists
+# one
+## Two
+## Three
+
+
+### lists:
 * one 
 * two 
 * three

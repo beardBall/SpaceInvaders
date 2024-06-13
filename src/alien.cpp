@@ -44,11 +44,12 @@ void Alien::draw()
     DrawRectangleLines(position.x, position.y,alienImage.width, alienImage.height,RED);
 }
 
-void Alien::update()
+void Alien::update(int alienDirection)
 {
 
         if ( GetTime() - lastMoveTime >= 0.95 ){
             
+            position.x += alienDirection;
             // if(lastMoveLeft){
             //     MoveRight();
             //     lastMoveLeft = false;

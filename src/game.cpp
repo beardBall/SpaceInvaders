@@ -51,18 +51,13 @@ void Game::draw()
     DrawText(TextFormat("Enemies left: %d", aliens.size()), 400,40,18, YELLOW);
 }
 
-void Game::update()
-{
 
 
-    for (auto &laser : spaceship.lasers)
-        laser.update();
-    dash.lasterCount = spaceship.lasers.size();
-    deleteInactiveLasers();
 
+void Game::checkCollisions(){
+    //Player laser and Aliens
     for (auto &alien : aliens)
     {
-        alien.update();
         for (auto &laser : spaceship.lasers)
         {
             if (CheckCollisionRecs(alien.getRect(), laser.getRect()))
@@ -71,11 +66,33 @@ void Game::update()
                 laser.active = false;
                 score++;
             }
-
-
-            // if(laser.getRect().x => alien.getRect().x and laser.getRect().x <= alien.getRect().x )
+        }
+        //Aliens and Obstacles
+        for(auto& obstacle: obstacles){
+            // if (CheckCollisionRecs(obstacle.getRect(), laser.getRect()))
+            // {
+            //     // alien.die();
+            //     // laser.active = false;
+            //     // score++;
+            // }
         }
     }
+
+
+}
+
+void Game::update()
+{
+    MoveAliens();
+
+    for (auto &laser : spaceship.lasers)
+        laser.update();
+    dash.lasterCount = spaceship.lasers.size();
+
+    checkCollisions();
+    deleteInactiveLasers();
+
+
     deleteInactiveEnemies();
 
 }
@@ -133,6 +150,14 @@ void Game::MoveAliens(){
             alienDirection = -1;
             MoveDownAliens(4);
         }
+
+
+        if(alien.position.x < 25){
+            alienDirection = 1;
+            MoveDownAliens(4);
+        }
+
+        alien.update(alienDirection);
     }
 }
 

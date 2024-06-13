@@ -12,7 +12,7 @@ class Alien {
         ~Alien();
 
         void draw();
-        void update();
+        void update(int alienDirection);
         void MoveLeft();
         void MoveRight();
         void FireLaser();
@@ -35,8 +35,8 @@ class Alien {
 
 
        int getType();
-           Vector2 position;
-               Texture2D alienImage;
+        Vector2 position;
+        Texture2D alienImage;
 
 
 

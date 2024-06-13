@@ -1,3 +1,5 @@
-/Users/waqar/Desktop/spaceInvaders/build/CMakeFiles/SpaceInvaders.dir
+/Users/waqar/Desktop/spaceInvaders/build/CMakeFiles/SpaceInvaderS.dir
+/Users/waqar/Desktop/spaceInvaders/build/CMakeFiles/package.dir
+/Users/waqar/Desktop/spaceInvaders/build/CMakeFiles/package_source.dir
 /Users/waqar/Desktop/spaceInvaders/build/CMakeFiles/edit_cache.dir
 /Users/waqar/Desktop/spaceInvaders/build/CMakeFiles/rebuild_cache.dir
