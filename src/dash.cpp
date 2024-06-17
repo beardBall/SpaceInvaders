@@ -1,4 +1,3 @@
-#pragma once
 #include "dash.hpp"
 #include <iostream>
 // #include "raylib.h"
@@ -15,6 +14,16 @@ void Dash::draw(){
    DrawText(
     TextFormat("Laser count: %d",lasterCount), 
     10,10,14,
+     WHITE);
+
+    DrawText(
+    TextFormat("Lives: %d",lives), 
+    80,40,14,
+     WHITE);
+
+     DrawText(
+    TextFormat("Aliens: %d",alienCount), 
+    130,80,14,
      WHITE);
 
     //    DrawText(

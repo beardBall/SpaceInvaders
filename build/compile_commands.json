@@ -31,6 +31,12 @@
 },
 {
   "directory": "/Users/waqar/Desktop/spaceInvaders/build",
+  "command": "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ -DASSETS_PATH=\\\"/Users/waqar/Desktop/spaceInvaders/assets/\\\" -DASSETS_PATH_AUDIO=\\\"/Users/waqar/Desktop/spaceInvaders/assets/audio/\\\" -DGRAVITY=9.81f -I/Users/waqar/Desktop/spaceInvaders/include -F/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/System/Library/Frameworks -g -std=gnu++20 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk -o CMakeFiles/SpaceInvaderS.dir/src/learnCPP.cpp.o -c /Users/waqar/Desktop/spaceInvaders/src/learnCPP.cpp",
+  "file": "/Users/waqar/Desktop/spaceInvaders/src/learnCPP.cpp",
+  "output": "CMakeFiles/SpaceInvaderS.dir/src/learnCPP.cpp.o"
+},
+{
+  "directory": "/Users/waqar/Desktop/spaceInvaders/build",
   "command": "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ -DASSETS_PATH=\\\"/Users/waqar/Desktop/spaceInvaders/assets/\\\" -DASSETS_PATH_AUDIO=\\\"/Users/waqar/Desktop/spaceInvaders/assets/audio/\\\" -DGRAVITY=9.81f -I/Users/waqar/Desktop/spaceInvaders/include -F/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/System/Library/Frameworks -g -std=gnu++20 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk -o CMakeFiles/SpaceInvaderS.dir/src/main.cpp.o -c /Users/waqar/Desktop/spaceInvaders/src/main.cpp",
   "file": "/Users/waqar/Desktop/spaceInvaders/src/main.cpp",
   "output": "CMakeFiles/SpaceInvaderS.dir/src/main.cpp.o"

@@ -40,8 +40,10 @@ void Game::draw()
 
     for (auto &alien : aliens)
     {
-        if (alien.active)
+        if (alien.active){
             alien.draw(); // hello
+            for(auto &laser: alien.lasers)
+            laser.draw();}
     }
 
     for(auto& obstacle:obstacles)
@@ -67,6 +69,22 @@ void Game::checkCollisions(){
                 score++;
             }
         }
+        for(auto &laser: alien.lasers){
+            if( CheckCollisionRecs(
+                spaceship.getRect(),laser.getRect())){
+                    spaceship.die();
+                    laser.active = false;
+                    
+                }
+
+
+        }
+
+        if(CheckCollisionRecs(spaceship.getRect(), alien.getRect())){
+            spaceship.die();
+        }
+
+
         //Aliens and Obstacles
         for(auto& obstacle: obstacles){
             // if (CheckCollisionRecs(obstacle.getRect(), laser.getRect()))
@@ -87,7 +105,16 @@ void Game::update()
 
     for (auto &laser : spaceship.lasers)
         laser.update();
+
+    for (auto &alien : aliens){
+        alien.FireLaser();
+        for(auto &laser: alien.lasers)
+            laser.update();
+        }
+
     dash.lasterCount = spaceship.lasers.size();
+    dash.alienCount = aliens.size();
+    dash.lives = spaceship.lives;
 
     checkCollisions();
     deleteInactiveLasers();
@@ -148,13 +175,13 @@ void Game::MoveAliens(){
     for(auto& alien: aliens){
         if(alien.position.x + alien.alienImage.width > GetScreenWidth() - 25){
             alienDirection = -1;
-            MoveDownAliens(4);
+            MoveDownAliens(24);
         }
 
 
         if(alien.position.x < 25){
             alienDirection = 1;
-            MoveDownAliens(4);
+            MoveDownAliens(24);
         }
 
         alien.update(alienDirection);

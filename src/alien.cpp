@@ -49,7 +49,7 @@ void Alien::update(int alienDirection)
 
         if ( GetTime() - lastMoveTime >= 0.95 ){
             
-            position.x += alienDirection;
+            position.x += alienDirection* 10;
             // if(lastMoveLeft){
             //     MoveRight();
             //     lastMoveLeft = false;
@@ -68,13 +68,13 @@ void Alien::update(int alienDirection)
 void Alien::MoveLeft()
 {
 //   std::cout << "moving left " << std::endl;
-  position.x -= 10;
+  position.x -= 4;
 }
 
 void Alien::MoveRight()
 {
     // std::cout << "moving right "<< std::endl;
-    position.x += 10;
+    position.x += 4;
 }
 
 // void Alien::FireLaser()
@@ -90,10 +90,10 @@ void Alien::MoveRight()
 
 void Alien::FireLaser()
 {
-  if(GetTime() - lastFireTime >= 0.35){
+  if(GetTime() - lastFireTime >= 0.75){
         lasers.push_back(Laser(
-            {position.x + alienImage.width/2, position.y+1}
-            ,-6));
+            {position.x + alienImage.width/2, position.y-1}
+            ,-2,12));
             lastFireTime = GetTime();
             PlaySound(laserSound);
         }

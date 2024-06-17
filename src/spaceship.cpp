@@ -9,6 +9,7 @@ Spaceship::Spaceship()
         position.y  = GetScreenHeight() - image.height;
         lastFireTime = 0;
         laserSound = LoadSound(ASSETS_PATH"Sounds/laser.ogg");
+        lives = 3;
         // SetSoundVolume(laserSound,0.91f);
 }
 
@@ -46,10 +47,27 @@ void Spaceship::FireLaser()
 {
     
     if(GetTime() - lastFireTime >= 0.35){
-        lasers.push_back(Laser(
-            {position.x + image.width/2, position.y+1}
-            ,-6));
+        lasers.push_back(
+            Laser(
+            {position.x + image.width/2, position.y+1},
+            -6,
+             0
+             ));
             lastFireTime = GetTime();
             PlaySound(laserSound);
         }
+}
+
+Rectangle Spaceship::getRect(){
+
+    return {
+        position.x, 
+        position.y, 
+        (float)image.width, 
+        (float)image.height
+        };
+}
+
+void Spaceship::die(){
+    lives--;
 }

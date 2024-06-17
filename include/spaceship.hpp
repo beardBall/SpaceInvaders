@@ -15,6 +15,10 @@ class Spaceship {
         void MoveRight();
         void FireLaser();
 
+        Rectangle getRect();
+
+        void die();
+
         std::vector<Laser> lasers;
         Sound laserSound;
 

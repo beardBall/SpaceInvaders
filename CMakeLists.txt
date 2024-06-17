@@ -10,6 +10,8 @@ set(CMAKE_EXPORT_COMPILE_COMMANDS ON)
 #find_package(raylib ${RAYLIB_VERSION} QUIET) # QUIET or REQUIRED
 #if (NOT raylib_FOUND) # If there's none, fetch and build raylib
 #  include(FetchContent)
+
+
 #  FetchContent_Declare(
 #    raylib
 #    DOWNLOAD_EXTRACT_TIMESTAMP OFF
@@ -31,6 +33,8 @@ set(CMAKE_EXPORT_COMPILE_COMMANDS ON)
 file(GLOB_RECURSE PROJECT_SOURCES CONFIGURE_DEPENDS "${CMAKE_CURRENT_LIST_DIR}/src/*.cpp")
 set(BIN "${CMAKE_CURRENT_LIST_DIR}/${PROJECT_NAME}")
 add_executable(${PROJECT_NAME})
+#add_executable(${CMAKE_CURRENT_LIST_DIR}/src/learnCPP.cpp)
+
 #
 
 

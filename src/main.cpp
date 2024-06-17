@@ -19,6 +19,10 @@ void init() {
 // Texture2D atlas;
 Vector2 gridPosition;
 
+#ifndef ASSETS_PATH
+  #define ASSETS_PATH "/Users/waqar/Desktop/spaceInvaders/assets/"
+#endif
+
 int main() {
   init();
 

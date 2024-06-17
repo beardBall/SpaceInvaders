@@ -1,7 +1,7 @@
 # SPACE Invaders 
 ## in C++ 
 ### using Raylib
-<br />***Head1***
+<br />*Head1*
 <br />
 
 
@@ -20,3 +20,10 @@ and other bits.
 * one 
 * two 
 * three
+
+my
+---
+name
+
+`ls -al`
+

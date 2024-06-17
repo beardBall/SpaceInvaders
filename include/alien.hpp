@@ -37,6 +37,7 @@ class Alien {
        int getType();
         Vector2 position;
         Texture2D alienImage;
+        int level;
 
 
 
