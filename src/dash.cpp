@@ -1,5 +1,6 @@
 #include "dash.hpp"
 #include <iostream>
+#include <globvars.hpp>
 // #include "raylib.h"
 // #include "globvars.hpp"
 
@@ -26,6 +27,11 @@ void Dash::draw(){
     130,80,14,
      WHITE);
 
+
+    // DrawText(
+    // TextFormat("Max alien lasers: %d",globVars::maxAlienLasers), 
+    // 160,180,14,
+    //  WHITE);
     //    DrawText(
     // TextFormat("Enemies remaining: %d",globVars::aliensRemaining), 
     // 100,10,14,

@@ -6,6 +6,7 @@ Game::Game()
     obstacles = createObstacles();
     alienDirection = 1;
 
+// globVars::maxAlienLasers = 7;
     int map[2][4] = {
         {4, 1, 3, 1},
         {2, 4, 2, 2}
@@ -68,15 +69,42 @@ void Game::checkCollisions(){
                 laser.active = false;
                 score++;
             }
+
+            for(auto &obstacle: obstacles){
+                for(auto &block: obstacle.blocks)
+                    if(block.active)
+                    {
+                        if(CheckCollisionRecs(
+                        block.getRect(),laser.getRect())
+                        ){
+                            block.active = false;
+                            laser.active = false;
+                    }
+                }
+
+            }
         }
         for(auto &laser: alien.lasers){
             if( CheckCollisionRecs(
                 spaceship.getRect(),laser.getRect())){
                     spaceship.die();
                     laser.active = false;
-                    
+
                 }
 
+            for(auto &obstacle: obstacles){
+                for(auto &block: obstacle.blocks)
+                    if(block.active)
+                    {
+                        if(CheckCollisionRecs(
+                        block.getRect(),laser.getRect())
+                        ){
+                            block.active = false;
+                            laser.active = false;
+                    }
+                }
+
+            }
 
         }
 
@@ -107,6 +135,7 @@ void Game::update()
         laser.update();
 
     for (auto &alien : aliens){
+        
         alien.FireLaser();
         for(auto &laser: alien.lasers)
             laser.update();
@@ -175,13 +204,13 @@ void Game::MoveAliens(){
     for(auto& alien: aliens){
         if(alien.position.x + alien.alienImage.width > GetScreenWidth() - 25){
             alienDirection = -1;
-            MoveDownAliens(24);
+            MoveDownAliens(14);
         }
 
 
         if(alien.position.x < 25){
             alienDirection = 1;
-            MoveDownAliens(24);
+            MoveDownAliens(14);
         }
 
         alien.update(alienDirection);

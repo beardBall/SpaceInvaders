@@ -3,6 +3,7 @@
 #include <iostream>
 #include <vector>
 #include "laser.hpp"
+// #include "game.hpp"
 
 class Alien {
 
@@ -38,6 +39,7 @@ class Alien {
         Vector2 position;
         Texture2D alienImage;
         int level;
+        
 
 
 

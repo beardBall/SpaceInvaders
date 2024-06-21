@@ -1,11 +1,10 @@
-#include "spaceship.hpp"
-#include "alien.hpp"
+#pragma once
+
+
 #include "dash.hpp"
 #include "obstacle.hpp"
-
-
-
-
+#include "alien.hpp"
+#include "spaceship.hpp"
 
 class Game{
     public:
@@ -23,7 +22,6 @@ class Game{
     
     private:
         Spaceship spaceship;
-        // Alien alien;
         Dash dash;
         std::vector<Obstacle> obstacles;
         void deleteInactiveLasers();

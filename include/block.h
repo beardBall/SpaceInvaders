@@ -7,6 +7,7 @@ class Block{
         // ~Block();
         void draw();
         Rectangle getRect();
+        bool active;
     private:
         Vector2 position;
 

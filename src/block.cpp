@@ -3,10 +3,12 @@
 Block::Block(Vector2 position)
 {
     this -> position = position;
+    active = true;
 }
 
 
 void Block::draw(){
+    if(active)
     DrawRectangle(position.x, position.y,3,3,{243,216,63,255});
 }
 

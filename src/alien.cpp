@@ -27,6 +27,7 @@ Alien::Alien(Vector2 position, int type)
         lastFireTime = 0;
         name = "name10mmmn";
         alienDieSound = LoadSound(ASSETS_PATH"Sounds/explosion.ogg");
+        // std::cout << "alienDirection: " << &g->alienDirection << std::endl;
 }
 
 
@@ -49,7 +50,7 @@ void Alien::update(int alienDirection)
 
         if ( GetTime() - lastMoveTime >= 0.95 ){
             
-            position.x += alienDirection* 10;
+            position.x += alienDirection* 2;
             // if(lastMoveLeft){
             //     MoveRight();
             //     lastMoveLeft = false;
@@ -90,12 +91,16 @@ void Alien::MoveRight()
 
 void Alien::FireLaser()
 {
-  if(GetTime() - lastFireTime >= 0.75){
+    int maxAlienLasers = 5;
+  if(GetTime() - lastFireTime >= 1.75){
+    if(maxAlienLasers < 10){
         lasers.push_back(Laser(
             {position.x + alienImage.width/2, position.y-1}
             ,-2,12));
             lastFireTime = GetTime();
             PlaySound(laserSound);
+        
+        }
         }
 }
 

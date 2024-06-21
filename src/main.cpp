@@ -5,11 +5,16 @@
 #include "z.hpp"
 #include <iostream>
 
+
+
+int gmaxlasers;
+
 #define WINDOWWIDTH 750
 #define WINDOWHEIGHT 750
 Color grey = {29, 29, 27, 255};
 //TODO
 void init() {
+  gmaxlasers = 10;
   // std::cout << NAMEE << std::endl;
   std::cout << __cplusplus << std::endl;
   std::cout << "hello...." << std::endl;

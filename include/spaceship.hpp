@@ -8,7 +8,6 @@ class Spaceship {
     public:
          Spaceship();
         ~Spaceship();
-
         void draw();
         void update();
         void MoveLeft();
@@ -27,8 +26,8 @@ class Spaceship {
         bool canShoot;
 
     private:
-    Texture2D image;
-    Vector2 position;
-    double lastFireTime;
+        Texture2D image;
+        Vector2 position;
+        double lastFireTime;
 
 };

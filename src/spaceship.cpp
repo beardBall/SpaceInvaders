@@ -1,5 +1,6 @@
 #include "spaceship.hpp"
-#include "raylib.h"
+// #include "raylib.h"
+// #include <iostream>
 
 
 Spaceship::Spaceship()
@@ -10,6 +11,7 @@ Spaceship::Spaceship()
         lastFireTime = 0;
         laserSound = LoadSound(ASSETS_PATH"Sounds/laser.ogg");
         lives = 3;
+        // std::cout << "score: " << &game->score << std::endl;
         // SetSoundVolume(laserSound,0.91f);
 }
 
