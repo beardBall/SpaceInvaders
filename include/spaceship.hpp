@@ -24,6 +24,8 @@ class Spaceship {
         int size;
         int lives;
         bool canShoot;
+        bool invincible;
+        double deathTime;
 
     private:
         Texture2D image;

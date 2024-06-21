@@ -22,13 +22,24 @@ Spaceship::~Spaceship()
 
 void Spaceship::draw()
 {
+     int d = (int)GetTime();
+
+    if(invincible){
+        if(((int)GetTime()) % 2 == 1){
+            DrawTextureV(image,position,RED);
+        }
+    }else{
     DrawTextureV(image,position,WHITE);
     // laser.draw();
+    }
 }
 
 void Spaceship::update()
 {
         // laser.update();
+
+        if(GetTime() - deathTime > 5)
+        invincible = false;
 }
 
 void Spaceship::MoveLeft()
@@ -72,4 +83,7 @@ Rectangle Spaceship::getRect(){
 
 void Spaceship::die(){
     lives--;
+    deathTime = GetTime();
+    invincible = true;
+
 }

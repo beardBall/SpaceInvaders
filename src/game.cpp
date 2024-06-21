@@ -130,6 +130,7 @@ void Game::checkCollisions(){
 void Game::update()
 {
     MoveAliens();
+    spaceship.update();
 
     for (auto &laser : spaceship.lasers)
         laser.update();
