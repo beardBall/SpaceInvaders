@@ -1,5 +1,5 @@
 clear
-cmake -B .build
-make
-build/SpaceInvaders
-
+cmake -B build
+cd build; make;
+./SpaceInvaders
+cd..

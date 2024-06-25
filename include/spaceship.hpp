@@ -1,8 +1,11 @@
 #pragma once
+
 #include "raylib.h"
 #include "laser.hpp"
+#include "globvars.hpp"
 #include <iostream>
 #include <vector>
+#include "z.hpp"
 
 class Spaceship {
     public:

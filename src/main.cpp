@@ -1,3 +1,4 @@
+// #pragma once
 #include "game.hpp"
 #include "alien.hpp"
 #include "obstacle.hpp"
@@ -18,7 +19,7 @@ void init() {
   // std::cout << NAMEE << std::endl;
   std::cout << __cplusplus << std::endl;
   std::cout << "hello...." << std::endl;
-  std::cout << giveme_five() << std::endl; 
+  std::cout << z::giveme_five() << std::endl; 
 }
 
 // Texture2D atlas;

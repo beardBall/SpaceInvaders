@@ -5,6 +5,8 @@
 #include "obstacle.hpp"
 #include "alien.hpp"
 #include "spaceship.hpp"
+#include "globvars.hpp"
+#include "z.hpp"
 
 class Game{
     public:
@@ -19,9 +21,14 @@ class Game{
         int score;
         int alienDirection;
 
+        vars v;
+        Spaceship spaceship;//(&v);
+
+        double waveEndTime, waveStartTime;
+
     
     private:
-        Spaceship spaceship;
+        
         Dash dash;
         std::vector<Obstacle> obstacles;
         void deleteInactiveLasers();

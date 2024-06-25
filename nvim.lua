@@ -11,3 +11,5 @@ vim.keymap.set({'n', 'v', 'i'}, "<C-q>","<cmd>q!<CR>")
 vim.keymap.set({'n', 'v', 'i'}, "<F5>", "<cmd>term ./brun.sh<cr>")
 vim.g.mapleader= " "
 vim.keymap.set('n','<leader>pv',vim.cmd.Ex)
+vim.keymap.set({'n','v'}, "<leader>w", "<cmd>w<CR>")
+vim.keymap.set({'n','v', 'i'}, "<leader>q", "<cmd>q!<CR>")

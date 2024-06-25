@@ -1,18 +1,18 @@
+#pragma once
+class vars
+{
+public:
+    int lives;
+    int aliensRemaining;
+    bool paused;
+    int maxAlienLasers;
 
+    vars()
+    {
 
+        lives = 4;
+    }
 
-// namespace myGame{
-
-//     class vars{
-//         public:
-
-//     static int lives = 3;
-//     static int aliensRemaining = 0;
-//     static bool paused = false;
-//     static int maxAlienLasers = 5;
-// };
-
-// }
-
-
-
+    private:
+    
+};

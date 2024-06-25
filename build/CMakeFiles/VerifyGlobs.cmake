@@ -15,6 +15,7 @@ set(OLD_GLOB
   "/Users/waqar/dev/cpp/spaceInvaders/src/obstacle.cpp"
   "/Users/waqar/dev/cpp/spaceInvaders/src/player.cpp"
   "/Users/waqar/dev/cpp/spaceInvaders/src/spaceship.cpp"
+  "/Users/waqar/dev/cpp/spaceInvaders/src/z.cpp"
   )
 if(NOT "${NEW_GLOB}" STREQUAL "${OLD_GLOB}")
   message("-- GLOB mismatch!")
