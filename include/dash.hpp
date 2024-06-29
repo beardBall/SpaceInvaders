@@ -17,6 +17,7 @@ class Dash{
             int difficulty;
             int lives;
             int alienLaserCount;
+	    Vector2 position;
          private:   
 
 };

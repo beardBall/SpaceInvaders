@@ -6,6 +6,7 @@
 #include "z.hpp"
 #include <iostream>
 
+//inti game;
 
 
 int gmaxlasers;
@@ -47,13 +48,15 @@ int main() {
 
   // SetTargetFPS(60);
   while (!WindowShouldClose()) {
-    game.update();
     game.handleInput();
+    game.update();
+    
     // process_mem_usage(vm, rss);
 
     BeginDrawing();
     ClearBackground(grey);
     game.draw();
+
     if(IsKeyDown(KEY_A)){
       std::cout<< "playing sound"<< std::endl;
       PlaySound(alienDieSound);

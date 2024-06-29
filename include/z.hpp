@@ -5,13 +5,16 @@
 #include <unistd.h>
 #include "raylib.h"
 
+
+typedef std::chrono::microseconds ms;
+
 namespace z
 {
     //Dummy function to retun an integer
     int giveme_five();
 
     //Gets double timestamp using Chrono
-    double getTimeMS();
+    long getTimeMS();
 
     void process_mem_usage(double &vm_usage, double &resident_set);
 

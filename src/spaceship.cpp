@@ -1,6 +1,8 @@
 #include "spaceship.hpp"
 #include "globvars.hpp"
 #include "z.hpp"
+#include <thread>
+
 
 // #include "raylib.h"
 // #include <iostream>
@@ -12,7 +14,10 @@ Spaceship::Spaceship()
         position.y = GetScreenHeight() - image.height;
         lastFireTime = 0;
         laserSound = LoadSound(ASSETS_PATH "Sounds/laser.ogg");
-        lives = 3;
+        dieSound = LoadSound(ASSETS_PATH "Sounds/8bit_bomb_explosion.wav");
+
+        lives = 5;
+        deathTime = 0;
         // std::cout << "score: " << &game->score << std::endl;
         // SetSoundVolume(laserSound,0.91f);
 }
@@ -24,11 +29,14 @@ Spaceship::~Spaceship()
 
 void Spaceship::draw()
 {
-        int d = z::getTimeMS();
+        double d = z::getTimeMS();
 
         if (invincible)
         {
-                if (std::fmod(d, 10) == 0)
+                DrawTextureV(image, position, GRAY);
+                DrawText ("Invincible", 20,500,36,WHITE);
+
+                if (std::fmod(d, 100) == 0)
                 {
                         DrawTextureV(image, position, BLUE);
                 }
@@ -43,9 +51,13 @@ void Spaceship::draw()
 void Spaceship::update()
 {
         // laser.update();
+	if(invincible){
+        	if (deathTime > 0 && (z::getTimeMS() - deathTime) > 2000){
+                	invincible = false;
+                	deathTime = 0;
+        	}
+	}
 
-        if (z::getTimeMS() - deathTime > 2000)
-                invincible = false;
 }
 
 void Spaceship::MoveLeft()
@@ -79,7 +91,6 @@ void Spaceship::FireLaser()
 
 Rectangle Spaceship::getRect()
 {
-
         return {
             position.x,
             position.y,
@@ -92,4 +103,9 @@ void Spaceship::die()
         lives--;
         deathTime = z::getTimeMS();
         invincible = true;
+        // std::this_thread::sleep_for(std::chrono::milliseconds(4000));
+        // std::this_thread::sleep_for(std::chrono::milliseconds(4000));
+        // std::cout <<"after 8000 milliseconds"<< z::getTimeMS() - deathTime;
+        // printf("hi");
+        PlaySound(dieSound);
 }

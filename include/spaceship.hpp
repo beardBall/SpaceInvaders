@@ -23,16 +23,18 @@ class Spaceship {
 
         std::vector<Laser> lasers;
         Sound laserSound;
+        Sound dieSound;
 
         int size;
         int lives;
         bool canShoot;
         bool invincible;
-        double deathTime;
+        long deathTime;
+	Vector2 position;
 
     private:
         Texture2D image;
-        Vector2 position;
+      //  Vector2 position;
         double lastFireTime;
 
 };

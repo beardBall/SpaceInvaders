@@ -1,8 +1,8 @@
 #include "game.hpp"
 #include <chrono>
-
+#include <singleton.hpp>
 Texture2D bg;
-
+//hhhhs
 Game::Game()
 {
         obstacles = createObstacles();
@@ -12,7 +12,7 @@ Game::Game()
         // s->maxNum =4;
 
         v.lives = 9;
-        bg= LoadTexture(ASSETS_PATH "Graphics/background.png");
+        bg = LoadTexture(ASSETS_PATH "Graphics/background.png");
 
         // globVars::maxAlienLasers = 7;
         int map[2][4] = {
@@ -36,10 +36,12 @@ Game::Game()
 
 Game::~Game()
 {
+	std::cout << "Game destroyed!  \n";
 }
 
 void Game::draw()
-{       DrawTexture(bg,0,0,WHITE);
+{
+        DrawTexture(bg, 0, 0, WHITE);
         spaceship.draw();
 
         for (auto &laser : spaceship.lasers)
@@ -98,11 +100,14 @@ void Game::checkCollisions()
                 }
                 for (auto &laser : alien.lasers)
                 {
-                        if (CheckCollisionRecs(
-                                spaceship.getRect(), laser.getRect()))
+                        if (!spaceship.invincible)
                         {
-                                spaceship.die();
-                                laser.active = false;
+                                if (CheckCollisionRecs(
+                                        spaceship.getRect(), laser.getRect()))
+                                {
+                                        spaceship.die();
+                                        laser.active = false;
+                                }
                         }
 
                         for (auto &obstacle : obstacles)
@@ -157,6 +162,7 @@ void Game::update()
         dash.lasterCount = spaceship.lasers.size();
         dash.alienCount = aliens.size();
         dash.lives = spaceship.lives;
+	dash.position = spaceship.position;
 
         checkCollisions();
         deleteInactiveLasers();
@@ -224,13 +230,13 @@ void Game::MoveAliens()
                 if (alien.position.x + alien.alienImage.width > GetScreenWidth() - 25)
                 {
                         alienDirection = -1;
-                        MoveDownAliens(14);
+                        MoveDownAliens(14 * alien.level);
                 }
 
                 if (alien.position.x < 25)
                 {
                         alienDirection = 1;
-                        MoveDownAliens(14);
+                        MoveDownAliens(14 * alien.level);
                 }
 
                 alien.update(alienDirection);

@@ -1,6 +1,8 @@
 #include "alien.hpp"
 #include "raylib.h"
 
+int ll;
+
 Alien::Alien(Vector2 position, int type)
 {
     this -> type = type;
@@ -25,6 +27,7 @@ Alien::Alien(Vector2 position, int type)
         position.x  = GetScreenWidth() / 2 - alienImage.width/2;
         position.y  = GetScreenHeight() - alienImage.height;
         lastFireTime = 0;
+        level = 1;
         name = "name10mmmn";
         alienDieSound = LoadSound(ASSETS_PATH"Sounds/explosion.ogg");
         // std::cout << "alienDirection: " << &g->alienDirection << std::endl;
@@ -48,9 +51,9 @@ void Alien::draw()
 void Alien::update(int alienDirection)
 {
 
-        if ( GetTime() - lastMoveTime >= 0.95 ){
+        if ( GetTime() - lastMoveTime >= 1.95 ){
             
-            position.x += alienDirection* 2;
+            position.x += alienDirection * level;
             // if(lastMoveLeft){
             //     MoveRight();
             //     lastMoveLeft = false;
@@ -60,6 +63,11 @@ void Alien::update(int alienDirection)
             //     lastMoveLeft = true;
             //     lastMoveTime = GetTime();    
             // }
+
+            if(position.y > GetScreenHeight()-10){
+
+                position.y = 10;
+                }
             
         
 
@@ -92,8 +100,9 @@ void Alien::MoveRight()
 void Alien::FireLaser()
 {
     int maxAlienLasers = 5;
-  if(GetTime() - lastFireTime >= 1.75){
+  if(GetTime() - lastFireTime >= 4.75/level){
     if(maxAlienLasers < 10){
+        
         lasers.push_back(Laser(
             {position.x + alienImage.width/2, position.y-1}
             ,-2,12));

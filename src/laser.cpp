@@ -23,7 +23,7 @@ void Laser::draw(){
 
 void Laser::update(){
     // position.y +=speed;
-
+	// speed +=  0.5;
 
     if(active){
 
