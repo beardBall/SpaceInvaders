@@ -14,5 +14,8 @@ vim.keymap.set('n','<leader>pv',vim.cmd.Ex)
 vim.keymap.set({'n','v'}, "<leader>w", "<cmd>w<CR>")
 vim.keymap.set({'n','v', 'i'}, "<leader>q", "<cmd>q<CR>")
 
+vim.keymap.set({'n','v', 'i'}, "<leader>c", ":! lgit 'now'<CR>")
 vim.cmd ":Neotree reveal_file=src/main.cpp"
 
+vim.keymap.set({'n','v'}, "[", "<cmd>next tab<CR>")
+vim.keymap.set({'n','v'}, "]", "<cmd>previous tab<CR>")

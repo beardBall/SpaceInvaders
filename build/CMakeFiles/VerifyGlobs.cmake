@@ -11,10 +11,12 @@ set(OLD_GLOB
   "/Users/waqar/dev/cpp/spaceInvaders/src/game.cpp"
   "/Users/waqar/dev/cpp/spaceInvaders/src/laser.cpp"
   "/Users/waqar/dev/cpp/spaceInvaders/src/learnCPP.cpp"
+  "/Users/waqar/dev/cpp/spaceInvaders/src/level.cpp"
   "/Users/waqar/dev/cpp/spaceInvaders/src/main.cpp"
   "/Users/waqar/dev/cpp/spaceInvaders/src/obstacle.cpp"
   "/Users/waqar/dev/cpp/spaceInvaders/src/player.cpp"
   "/Users/waqar/dev/cpp/spaceInvaders/src/spaceship.cpp"
+  "/Users/waqar/dev/cpp/spaceInvaders/src/test.cpp"
   "/Users/waqar/dev/cpp/spaceInvaders/src/z.cpp"
   )
 if(NOT "${NEW_GLOB}" STREQUAL "${OLD_GLOB}")

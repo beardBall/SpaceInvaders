@@ -37,6 +37,12 @@
 },
 {
   "directory": "/Users/waqar/dev/cpp/spaceInvaders/build",
+  "command": "/usr/bin/clang++ -DASSETS_PATH=\\\"/Users/waqar/dev/cpp/spaceInvaders/assets/\\\" -DASSETS_PATH_AUDIO=\\\"/Users/waqar/dev/cpp/spaceInvaders/assets/audio/\\\" -DGRAVITY=9.81f -I/Users/waqar/dev/cpp/spaceInvaders/include -F/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/System/Library/Frameworks -g -std=gnu++20 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk -o CMakeFiles/SpaceInvaderS.dir/src/level.cpp.o -c /Users/waqar/dev/cpp/spaceInvaders/src/level.cpp",
+  "file": "/Users/waqar/dev/cpp/spaceInvaders/src/level.cpp",
+  "output": "CMakeFiles/SpaceInvaderS.dir/src/level.cpp.o"
+},
+{
+  "directory": "/Users/waqar/dev/cpp/spaceInvaders/build",
   "command": "/usr/bin/clang++ -DASSETS_PATH=\\\"/Users/waqar/dev/cpp/spaceInvaders/assets/\\\" -DASSETS_PATH_AUDIO=\\\"/Users/waqar/dev/cpp/spaceInvaders/assets/audio/\\\" -DGRAVITY=9.81f -I/Users/waqar/dev/cpp/spaceInvaders/include -F/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/System/Library/Frameworks -g -std=gnu++20 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk -o CMakeFiles/SpaceInvaderS.dir/src/main.cpp.o -c /Users/waqar/dev/cpp/spaceInvaders/src/main.cpp",
   "file": "/Users/waqar/dev/cpp/spaceInvaders/src/main.cpp",
   "output": "CMakeFiles/SpaceInvaderS.dir/src/main.cpp.o"
@@ -58,6 +64,12 @@
   "command": "/usr/bin/clang++ -DASSETS_PATH=\\\"/Users/waqar/dev/cpp/spaceInvaders/assets/\\\" -DASSETS_PATH_AUDIO=\\\"/Users/waqar/dev/cpp/spaceInvaders/assets/audio/\\\" -DGRAVITY=9.81f -I/Users/waqar/dev/cpp/spaceInvaders/include -F/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/System/Library/Frameworks -g -std=gnu++20 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk -o CMakeFiles/SpaceInvaderS.dir/src/spaceship.cpp.o -c /Users/waqar/dev/cpp/spaceInvaders/src/spaceship.cpp",
   "file": "/Users/waqar/dev/cpp/spaceInvaders/src/spaceship.cpp",
   "output": "CMakeFiles/SpaceInvaderS.dir/src/spaceship.cpp.o"
+},
+{
+  "directory": "/Users/waqar/dev/cpp/spaceInvaders/build",
+  "command": "/usr/bin/clang++ -DASSETS_PATH=\\\"/Users/waqar/dev/cpp/spaceInvaders/assets/\\\" -DASSETS_PATH_AUDIO=\\\"/Users/waqar/dev/cpp/spaceInvaders/assets/audio/\\\" -DGRAVITY=9.81f -I/Users/waqar/dev/cpp/spaceInvaders/include -F/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/System/Library/Frameworks -g -std=gnu++20 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk -o CMakeFiles/SpaceInvaderS.dir/src/test.cpp.o -c /Users/waqar/dev/cpp/spaceInvaders/src/test.cpp",
+  "file": "/Users/waqar/dev/cpp/spaceInvaders/src/test.cpp",
+  "output": "CMakeFiles/SpaceInvaderS.dir/src/test.cpp.o"
 },
 {
   "directory": "/Users/waqar/dev/cpp/spaceInvaders/build",

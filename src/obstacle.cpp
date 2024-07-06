@@ -18,6 +18,7 @@
 Obstacle::Obstacle(Vector2 position)
 {
     this->position = position;
+  active = true;
 
     for (unsigned int row = 0; row < grid.size(); ++row)
     {

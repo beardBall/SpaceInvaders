@@ -1,11 +1,13 @@
 // #pragma once
 #include "game.hpp"
-#include "alien.hpp"
-#include "obstacle.hpp"
+//#include "alien.hpp"
+//#include "obstacle.hpp"
 #include "raylib.h"
 #include "z.hpp"
 #include <iostream>
+#include "level.hpp"
 
+//ggg
 //inti game;
 
 
@@ -31,7 +33,11 @@ Vector2 gridPosition;
 #endif
 
 int main() {
-  init();
+ 
+Level lvl;
+
+    return 0;
+    init();
 
   InitWindow(WINDOWWIDTH, WINDOWHEIGHT, "SpashInvaders124!!!!");
   SetWindowState(FLAG_VSYNC_HINT);

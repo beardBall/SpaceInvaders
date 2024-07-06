@@ -5,6 +5,7 @@
 class Obstacle {
     public:
         Obstacle(Vector2 position);
+      bool active;
         void draw();
         Vector2 position;
         std::vector<Block> blocks;

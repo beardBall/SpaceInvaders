@@ -38,4 +38,5 @@ class Game{
         void MoveAliens();
         void checkCollisions();
         std::vector<Obstacle> createObstacles();
+        void checkCollision_alien_obstacle();
 };
