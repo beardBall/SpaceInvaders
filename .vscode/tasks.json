@@ -1,5 +1,6 @@
 {
     "tasks": [
+        
         {
             "type": "cppbuild",
             "label": "C/C++: clang build active file",
@@ -27,6 +28,9 @@
             ],
             "options": {
                 "cwd": "${fileDirname}"
+            },
+            "presentation":{
+                "clear": true
             },
             "problemMatcher": [
                 "$gcc"
