@@ -1,32 +1,21 @@
 #pragma once
 #include "raylib.h"
+//#include <iostream>
+#include <vector>
 
-
-
-
-
-class Level{
+class Level {
 
 public:
+  Level();
+  //~Level();
 
-    Level();
-    //~Level();
+  int number;
 
+  std::vector<std::vector<int>> map;
 
+  void update();
 
-    int number;
-
-
-    void update();
-
-    void draw();
-
+  void draw();
 
 private:
-
-
-
-
-
-
 };

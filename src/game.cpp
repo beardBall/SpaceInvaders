@@ -1,6 +1,8 @@
 #include "game.hpp"
+#include "level.hpp"
 #include <chrono>
 #include <singleton.hpp>
+
 Texture2D bg;
 // hhhhs
 Game::Game() {
@@ -13,6 +15,7 @@ Game::Game() {
   v.lives = 9;
   bg = LoadTexture(ASSETS_PATH "Graphics/background.png");
 
+  Level level;
   // globVars::maxAlienLasers = 7;
   int map[2][4] = {{4, 1, 3, 1}, {2, 4, 2, 6}};
 
@@ -22,8 +25,17 @@ Game::Game() {
   for (int i = 0; i < rows; i++) {
     for (int j = 0; j < cols; j++) {
       std::cout << map[i][j] << ", ";
+//      aliens.push_back(          Alien({(float)(100 + j * 100), (float)(100 + i * 60)}, map[i][j]));
+    }
+
+    std::cout << std::endl;
+  }
+
+  for (int i = 0; i < level.map.size(); i++) {
+    for (int j = 0; j < level.map[1].size(); j++) {
+      std::cout << level.map[i][j] << ", ";
       aliens.push_back(
-          Alien({(float)(100 + j * 100), (float)(100 + i * 60)}, map[i][j]));
+          Alien({(float)(100 + j * 100), (float)(100 + i * 60)}, level.map[i][j]));
     }
 
     std::cout << std::endl;
@@ -172,9 +184,9 @@ void Game::handleInput() {
     spaceship.FireLaser();
   }
 
-    if(IsKeyDown(KEY_P)){
-    std::cout << "pausing....\n"; 
-    }
+  if (IsKeyDown(KEY_P)) {
+    std::cout << "pausing....\n";
+  }
 }
 
 void Game::deleteInactiveLasers() {

@@ -39,9 +39,8 @@ void Player::update(){
         position.y--;
     if(IsKeyPressed(KEY_DOWN))
         position.y++;
-
-        if(IsKeyPressed(KEY_SPACE))
-        position.y++;
+    if(IsKeyPressed(KEY_SPACE))
+            position.y++;
 
 
 }

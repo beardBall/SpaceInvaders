@@ -5,7 +5,7 @@ set(CMAKE_CXX_STANDARD 20)
 #Generate compile_commands.json
 set(CMAKE_EXPORT_COMPILE_COMMANDS ON)
 
- 
+  
 #set(RAYLIB_VERSION 5.0)
 #find_package(raylib ${RAYLIB_VERSION} QUIET) # QUIET or REQUIRED
 #if (NOT raylib_FOUND) # If there's none, fetch and build raylib
@@ -28,6 +28,7 @@ set(CMAKE_EXPORT_COMPILE_COMMANDS ON)
 
 
 #target_link_libraries(${PROJECT_NAME} raylib)
+
 
 
 file(GLOB_RECURSE PROJECT_SOURCES CONFIGURE_DEPENDS "${CMAKE_CURRENT_LIST_DIR}/src/*.cpp")

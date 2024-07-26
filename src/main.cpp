@@ -34,9 +34,10 @@ Vector2 gridPosition;
 
 int main() {
  
-Level lvl;
+//Level lvl;
 
-    return 0;
+//return 0;
+	
     init();
 
   InitWindow(WINDOWWIDTH, WINDOWHEIGHT, "SpashInvaders124!!!!");
