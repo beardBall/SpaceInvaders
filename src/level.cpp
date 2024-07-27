@@ -4,9 +4,10 @@
 #include <string>
 #include <vector>
 
-Level::Level() {
+Level::Level(int levelNumber) {
 
-  number = 1;
+  //number = 1;
+	this->number = levelNumber;
   // std::cout << "Level created here\n";
   std::ifstream fin(ASSETS_PATH "Levels/1.txt");
   std::vector<std::string> initialLevel;
@@ -97,4 +98,4 @@ Level::Level() {
 
 void update() {}
 
-void draw() { DrawText("Level drawing", 500, 500, 16, RED); }
+void Level::draw() { DrawText("Level drawing", 500, 500, 16, RED); }

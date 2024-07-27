@@ -15,7 +15,7 @@ Game::Game() {
   v.lives = 9;
   bg = LoadTexture(ASSETS_PATH "Graphics/background.png");
 
-  Level level;
+level = new Level(1);
   // globVars::maxAlienLasers = 7;
   int map[2][4] = {{4, 1, 3, 1}, {2, 4, 2, 6}};
 
@@ -31,11 +31,11 @@ Game::Game() {
     std::cout << std::endl;
   }
 
-  for (int i = 0; i < level.map.size(); i++) {
-    for (int j = 0; j < level.map[1].size(); j++) {
-      std::cout << level.map[i][j] << ", ";
+  for (int i = 0; i < level->map.size(); i++) {
+    for (int j = 0; j < level->map[1].size(); j++) {
+      std::cout << level->map[i][j] << ", ";
       aliens.push_back(
-          Alien({(float)(100 + j * 100), (float)(100 + i * 60)}, level.map[i][j]));
+          Alien({(float)(100 + j * 100), (float)(100 + i * 60)}, level->map[i][j]));
     }
 
     std::cout << std::endl;
@@ -45,6 +45,7 @@ Game::Game() {
 Game::~Game() { std::cout << "Game destroyed!  \n"; }
 
 void Game::draw() {
+	level->draw();
   DrawTexture(bg, 0, 0, WHITE);
   spaceship.draw();
 

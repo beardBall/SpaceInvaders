@@ -1,14 +1,15 @@
 #pragma once
 #include "raylib.h"
-//#include <iostream>
+// #include <iostream>
 #include <vector>
 
 class Level {
 
 public:
-  Level();
-  //~Level();
-
+  //  Level();
+  Level(int levelNumber);
+  ~Level();
+	//void loadLevel(int num);
   int number;
 
   std::vector<std::vector<int>> map;

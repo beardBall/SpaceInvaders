@@ -1,7 +1,7 @@
 clear
-[ -e build/SpaceInvaders ] && rm build/SpaceInvaders
+[ -e .build/SpaceInvaders ] && rm .build/SpaceInvaders
 
-cmake -B build
-cd build; make;
+cmake -B .build
+cd .build; make;
 ./SpaceInvaders
 cd ..

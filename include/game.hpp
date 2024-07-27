@@ -7,6 +7,7 @@
 #include "spaceship.hpp"
 #include "globvars.hpp"
 #include "z.hpp"
+#include "level.hpp"
 
 class Game{
     public:
@@ -20,7 +21,7 @@ class Game{
         std::vector<Alien> aliens;
         int score;
         int alienDirection;
-
+	Level* level;
         vars v;
         Spaceship spaceship;//(&v);
 
