@@ -3,7 +3,11 @@
 
 --print("hello from local nvim.lua")
 --vim.keymap.set({'n', 'v', 'i'}, "<C-b>","<cmd>w<CR><cmd>! ./brun.sh<CR>")
-vim.keymap.set({'n', 'v', 'i'}, "<C-s>","<cmd>w<CR>")
+vim.keymap.set({'n', 'v', 'i'}, "<C-s>",function()
+	vim.cmd(":stopinsert")
+	vim.cmd(":w")
+end
+)
 
 vim.keymap.set({'n', 'v', 'i'}, "<C-q>","<cmd>q<CR>")
 

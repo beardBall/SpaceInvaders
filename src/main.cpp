@@ -55,7 +55,7 @@ int main() {
 
   // SetTargetFPS(60);
   while (!WindowShouldClose()) {
-    game.handleInput();
+    //game.handleInput();
     game.update();
     
     // process_mem_usage(vm, rss);

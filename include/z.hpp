@@ -8,6 +8,9 @@
 
 typedef std::chrono::microseconds ms;
 
+
+#define LOG(x) std::cout << x << "\n"
+
 namespace z
 {
     //Dummy function to retun an integer

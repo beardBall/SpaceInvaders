@@ -13,7 +13,7 @@ class Alien {
         ~Alien();
 
         void draw();
-        void update(int alienDirection);
+        void update();
         void MoveLeft();
         void MoveRight();
         void FireLaser();
@@ -25,6 +25,7 @@ class Alien {
         bool active;
         bool canShoot;
         int level;
+	int direction;
 
         std::vector<Laser> lasers;
         Sound laserSound;

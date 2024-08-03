@@ -17,27 +17,12 @@ class Game{
         void draw();
         void update();
         void handleInput();
-         Music music;
-        std::vector<Alien> aliens;
-        int score;
-        int alienDirection;
 	Level* level;
         vars v;
-        Spaceship spaceship;//(&v);
-
+	Dash dash;
         double waveEndTime, waveStartTime;
 
     
     private:
         
-        Dash dash;
-        std::vector<Obstacle> obstacles;
-        void deleteInactiveLasers();
-
-        void deleteInactiveEnemies();
-        void MoveDownAliens(int distance);
-        void MoveAliens();
-        void checkCollisions();
-        std::vector<Obstacle> createObstacles();
-        void checkCollision_alien_obstacle();
 };
