@@ -33,7 +33,7 @@ void Dash::draw(){
      WHITE);
 
 
-        z::raylib::DrawTex("Waqar",50,300,24, YELLOW);
+        z::raylib::DrawText2("Waqar",50,300,24, YELLOW);
 
     // DrawText(
     // TextFormat("Max alien lasers: %d",globVars::maxAlienLasers), 

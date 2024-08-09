@@ -22,17 +22,19 @@ void Game::draw() {
   dash.draw();
 }
 
+void Game::update() {
+  level->update();
 
-
-
-void Game::update() { level->update();
-
-
-if(level->isOver)
-		if(GetTime() - level->levelEndTime >= 3){
-	level = new Level(2);
-
-		}
+  if (level->isOver) {
+		double secondsAfter = GetTime() - level->levelEndTime;
+	
+		if(secondsAfter > 1){DrawText("Well done!", 400,400,16,WHITE);}
+		if(secondsAfter > 3){DrawText("Get Ready!", 400,450,16,WHITE);}
+		
+    if (GetTime() - level->levelEndTime >= 5) {
+      level = new Level( level->number+1);
+    }
+  }
 }
 
 void Game::handleInput() {

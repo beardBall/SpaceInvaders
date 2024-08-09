@@ -10,10 +10,33 @@ Level::Level(int levelNumber) {
 
   // number = 1;
   this->number = levelNumber;
-	isOver = false;
-  // std::cout << "Level created here\n";
-  //std::ifstream fin(ASSETS_PATH "Levels/1.txt");
-  std::ifstream fin(std::format(ASSETS_PATH "Levels/{}.txt",number));
+  isOver = false;
+  if(loadLevel(number) == false){
+LOG("Failed to load level");
+			
+};
+
+  // Load the enemies based on the map
+  std::cout << "\n\nprinting map\n\n";
+  for (int i = 0; i < map.size(); i++) {
+    for (int j = 0; j < map[1].size(); j++) {
+      // std::cout << map[i][j] << " ";
+      aliens.push_back(
+          Alien({(float)(100 + j * 100), (float)(100 + i * 60)}, map[i][j]));
+    }
+    std::cout << "\n";
+  }
+
+  obstacles = createObstacles();
+  bg = LoadTexture(ASSETS_PATH "Graphics/background.png");
+  alienDirection = 1;
+}
+
+bool Level::loadLevel(int levelNum) {
+
+  this->number = levelNum;
+  isOver = false;
+  std::ifstream fin(std::format(ASSETS_PATH "Levels/{}.txt", number));
   std::vector<std::string> initialLevel;
   std::string line;
 
@@ -97,21 +120,8 @@ Level::Level(int levelNumber) {
   // for(vec()){
 
   //}
-
-  map = vec;
-  std::cout << "\n\nprinting map\n\n";
-  for (int i = 0; i < map.size(); i++) {
-    for (int j = 0; j < map[1].size(); j++) {
-      std::cout << map[i][j] << " ";
-      aliens.push_back(
-          Alien({(float)(100 + j * 100), (float)(100 + i * 60)}, map[i][j]));
-    }
-    std::cout << "\n";
-  }
-
-  obstacles = createObstacles();
-  bg = LoadTexture(ASSETS_PATH "Graphics/background.png");
-	alienDirection = 1;
+  this->map = vec;
+  return true;
 }
 
 void Level::draw() {
@@ -215,13 +225,13 @@ void Level::checkCollisions() {
 void Level::update() {
   handleInput();
   spaceship.update();
-  //MoveAliens();
+  // MoveAliens();
 
   for (auto &laser : spaceship.lasers)
     laser.update();
 
   for (auto &alien : aliens) {
-		alien.update();
+    alien.update();
 
     alien.FireLaser();
     for (auto &laser : alien.lasers)
@@ -239,8 +249,8 @@ void Level::update() {
   deleteInactiveEnemies();
 
   if (aliens.size() == 0 && !isOver) {
-		isOver = true;
-		levelEndTime = GetTime();
+    isOver = true;
+    levelEndTime = GetTime();
 
     waveEndTime =
         (double)std::chrono::steady_clock().now().time_since_epoch().count();
@@ -310,7 +320,7 @@ void Level::MoveAliens() {
       MoveDownAliens(24 * alien.level);
     }
 
-   // alien.update(alienDirection);
+    // alien.update(alienDirection);
   }
 }
 

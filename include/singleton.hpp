@@ -8,7 +8,9 @@ class MySingleton
         MySingleton& operator=(MySingleton const& copy); // Not Implemented
 
     public:
-        static MySingleton& getInstance()
+        int lives;
+
+	static MySingleton& getInstance()
         {
             // The only instance
             // Guaranteed to be lazy initialized
