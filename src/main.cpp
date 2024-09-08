@@ -14,6 +14,8 @@ int gmaxlasers;
 
 #define WINDOWWIDTH 750
 #define WINDOWHEIGHT 750
+#define GLSL_VERSION 330
+
 Color grey = {29, 29, 27, 255};
 // TODO
 void init() {
@@ -46,6 +48,12 @@ int main() {
   Sound alienDieSound;
   alienDieSound = LoadSound(ASSETS_PATH "Sounds/explosion08.wav");
   Game game;
+  Shader shader = LoadShader(
+      0, TextFormat(ASSETS_PATH "Shaders/grayscale.fs", GLSL_VERSION));
+  Shader shader_bloom = LoadShader(0, ASSETS_PATH "Shaders/bloom.fs");
+  // shaders[FX_GRAYSCALE] = LoadShader(
+  //   0, TextFormat("resources/shaders/glsl%i/grayscale.fs",
+  //   GLSL_VERSION));
 
   int map[3][3] = {{1, 1, 1}, {2, 2, 2}, {3, 3, 2}};
 
@@ -61,6 +69,7 @@ int main() {
 
     BeginDrawing();
     ClearBackground(grey);
+    BeginShaderMode(shader_bloom);
     game.draw();
 
     if (IsKeyDown(KEY_A)) {
@@ -68,8 +77,10 @@ int main() {
       PlaySound(alienDieSound);
       PlaySound(alienDieSound);
     }
+    EndShaderMode();
     EndDrawing();
   }
+
   CloseWindow();
   UnloadSound(alienDieSound);
   CloseAudioDevice();
