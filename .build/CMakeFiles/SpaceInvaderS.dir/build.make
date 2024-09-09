@@ -285,7 +285,6 @@ SpaceInvaderS: CMakeFiles/SpaceInvaderS.dir/src/test.cpp.o
 SpaceInvaderS: CMakeFiles/SpaceInvaderS.dir/src/z.cpp.o
 SpaceInvaderS: CMakeFiles/SpaceInvaderS.dir/build.make
 SpaceInvaderS: /Users/waqar/dev/cpp/spaceInvaders/lib/libraylib.a
-SpaceInvaderS: /Users/waqar/dev/cpp/spaceInvaders/lib/libtinyxml2.a
 SpaceInvaderS: CMakeFiles/SpaceInvaderS.dir/link.txt
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=/Users/waqar/dev/cpp/spaceInvaders/.build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_14) "Linking CXX executable SpaceInvaderS"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/SpaceInvaderS.dir/link.txt --verbose=$(VERBOSE)

@@ -48,8 +48,11 @@ int main() {
   Sound alienDieSound;
   alienDieSound = LoadSound(ASSETS_PATH "Sounds/explosion08.wav");
   Game game;
+  // std::string shaderName = "scanlines.fs";
+  // shaderName = str(ASSETS_PATH) + "Shaders/" + shaderName;
+
   Shader shader = LoadShader(
-      0, TextFormat(ASSETS_PATH "Shaders/grayscale.fs", GLSL_VERSION));
+      0, TextFormat(ASSETS_PATH "Shaders/scanlines.fs", GLSL_VERSION));
   Shader shader_bloom = LoadShader(0, ASSETS_PATH "Shaders/bloom.fs");
   // shaders[FX_GRAYSCALE] = LoadShader(
   //   0, TextFormat("resources/shaders/glsl%i/grayscale.fs",
@@ -69,7 +72,7 @@ int main() {
 
     BeginDrawing();
     ClearBackground(grey);
-    BeginShaderMode(shader_bloom);
+    BeginShaderMode(shader);
     game.draw();
 
     if (IsKeyDown(KEY_A)) {
