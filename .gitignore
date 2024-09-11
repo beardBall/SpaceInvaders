@@ -3,4 +3,5 @@
 .clangd/
 .cache/
 .vscode/
+android.raylib_game/
 
