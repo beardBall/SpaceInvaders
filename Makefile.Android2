@@ -1,24 +1,3 @@
-#*****************************  __MY OWN makefile__  *********************************************************************
-#
-#   raylib makefile for Android project (APK building)
-#
-#   Copyright (c) 2017-2024 Ramon Santamaria (@raysan5)
-#
-#   This software is provided "as-is", without any express or implied warranty. In no event
-#   will the authors be held liable for any damages arising from the use of this software.
-#
-#   Permission is granted to anyone to use this software for any purpose, including commercial
-#   applications, and to alter it and redistribute it freely, subject to the following restrictions:
-#
-#     1. The origin of this software must not be misrepresented; you must not claim that you
-#     wrote the original software. If you use this software in a product, an acknowledgment
-#     in the product documentation would be appreciated but is not required.
-#
-#     2. Altered source versions must be plainly marked as such, and must not be misrepresented
-#     as being the original software.
-#
-#     3. This notice may not be removed or altered from any source distribution.
-#
 #**************************************************************************************************
 
 # Define required raylib variables
@@ -31,6 +10,7 @@ RAYLIB_PATH            ?= ~/dev/cpp/raylib
 ANDROID_ARCH           ?= ARM64
 ANDROID_API_VERSION     = 34
 NDK_VERSION				= 27.1.12297006
+
 # Android required path variables
 # NOTE: Starting with Android NDK r21, no more toolchain generation is required, NDK is the toolchain on itself
 ifeq ($(OS),Windows_NT)
@@ -41,19 +21,7 @@ else
     ANDROID_TOOLCHAIN = $(ANDROID_NDK)/toolchains/llvm/prebuilt/darwin-x86_64
 endif
 
-ifeq ($(ANDROID_ARCH),ARM)
-    ANDROID_ARCH_NAME   = armeabi-v7a
-endif
-ifeq ($(ANDROID_ARCH),ARM64)
-    ANDROID_ARCH_NAME   = arm64-v8a
-endif
-ifeq ($(ANDROID_ARCH),x86)
-    ANDROID_ARCH_NAME   = x86
-endif
-ifeq ($(ANDROID_ARCH),x86_64)
-    ANDROID_ARCH_NAME   = x86_64
-endif
-
+ANDROID_ARCH_NAME   = arm64-v8a
 
 # Required path variables
 # NOTE: JAVA_HOME must be set to JDK (using OpenJDK 13)

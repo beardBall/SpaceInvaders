@@ -1,4 +1,6 @@
-build/
+.build/
 .DS_Store
 .clangd/
 .cache/
+.vscode/
+

@@ -1,0 +1,3 @@
+/Users/waqar/dev/cpp/spaceInvaders/build/CMakeFiles/SpaceInvaderS.dir
+/Users/waqar/dev/cpp/spaceInvaders/build/CMakeFiles/edit_cache.dir
+/Users/waqar/dev/cpp/spaceInvaders/build/CMakeFiles/rebuild_cache.dir
